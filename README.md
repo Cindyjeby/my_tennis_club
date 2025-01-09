@@ -40,3 +40,26 @@ then run server and search: 127.0.0.1:8000/members/ (members being the path to t
  - py manage.py migrate
 - if you want to view the SQL statements that weere executed from migration run this:
  - py manage.py sqlmigrate <nameofapp: members> 0001
+
+11. Django Insert Data
+To Add Records
+- we will use ptyon interpreter(python shell)
+- Run: py manage.py shell
+- then: from members.models import Member
+- then: Member.objects.all()
+- then you will get: <QuerySet []>
+QUERYSET: this is a collection of data from a database.
+- then to add data you run: member = Member(firstname='', lastname='')
+- then save: member.save()
+- then to check if it saved run: Member.objects.all().values()
+
+TO Add Multiple Records
+- member1 = Member(firstname='', lastname='')
+- member2 = Member(firstname='', lastname='')
+- member3 = Member(firstname='', lastname='s')
+- member4 = Member(firstname='', lastname='')
+- member5 = Member(firstname='', lastname='')
+- members_list = [member1, member2, member3, member4, member5]
+- for x in members_list:
+-   x.save()
+
