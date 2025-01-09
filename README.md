@@ -43,7 +43,7 @@ then run server and search: 127.0.0.1:8000/members/ (members being the path to t
 
 11. Django Insert Data
 To Add Records
-- we will use ptyon interpreter(python shell)
+- we will use python interpreter(python shell)
 - Run: py manage.py shell
 - then: from members.models import Member
 - then: Member.objects.all()
@@ -63,3 +63,37 @@ TO Add Multiple Records
 - for x in members_list:
 -   x.save()
 
+12. Django Update Data
+- still in the shell we run the following comands: 
+  -  from members.models import Member ; this show all records
+  - x = Member.objects.all()[5] ; ill be changing the laste name in the file.
+  - x.firstname ; shows the name of the person's index you chose
+  - then save: x.save()
+  - then check if updated: Member.objects.all().values()
+
+13. Django Delete Records
+- still working in shell
+first you get the records:
+   - from members.models import Member
+then select a member:
+   - x = Member.objects.all()[2]
+then confirm the name:
+   - x.firstname
+if its the one delete:
+   - x.delete()
+to check:
+   - Member.objects.all().values()
+
+14. Django Update Model
+- To add a field to a table after it is created, open the models.py file, and make your changes.
+- Then make a migration:
+    - py manage.py makemigrations members
+    - py manage.py migrate - to create it on the table
+- then insert data:
+    - run: py manage.py shell - to start shell
+    - run: from members.models import Member
+    - run: x = Member.objects.all()[0]
+    - run: x.phone = 5551234
+    - run: x.joined_date = '2022-01-05'
+    - run: x.save()
+    - run to check: Member.objects.all().values()
