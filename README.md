@@ -17,6 +17,7 @@ py manage.py runserver
 
 6. to create an app run:
 py manage.py startapp <nameofapp>
+- Note: every time you create an app update in the setting.py to add the app name
 
 7. VIEWS.PY
 - Django views are Python functions that take http requests and return http response, like HTML documents.
@@ -26,3 +27,6 @@ py manage.py startapp <nameofapp>
 in this case example check:
 my_tennis_club/members/urls.py and my_tennis_club/my_tennis_club/urls.py
 then run server and search: 127.0.0.1:8000/members/ (members being the path to the new page)
+
+9. TEMPLATES folder
+- handles all html files
