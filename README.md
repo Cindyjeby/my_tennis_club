@@ -97,3 +97,6 @@ to check:
     - run: x.joined_date = '2022-01-05'
     - run: x.save()
     - run to check: Member.objects.all().values()
+
+15. Testing in Django
+- here we have created a template in template called template.html which can be used to test how a file would look without tamplering with the main project, this is very optional.
